@@ -32,8 +32,8 @@ Um bot Discord completo e profissional desenvolvido com TypeScript usando o fram
 
 1. **Clone o repositório**
 ```bash
-git clone https://github.com/22ez0/discord-bot.git
-cd discord-bot
+git clone https://github.com/22ez0/eixobot.git
+cd eixobot
 ```
 
 2. **Instale as dependências**

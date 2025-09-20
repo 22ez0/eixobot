@@ -1,5 +1,5 @@
 services:
-  - type: worker
+  - type: web
     name: discord-bot
     env: node
     region: oregon
@@ -12,3 +12,5 @@ services:
         sync: false
       - key: NODE_ENV
         value: production
+      - key: PORT
+        value: 5000

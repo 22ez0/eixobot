@@ -1,0 +1,74 @@
+
+> build
+> tsc
+
+src/discord/base/handlers.ts(30,16): error TS2339: Property 'commands' does not exist on type 'Client<boolean>'.
+src/discord/commands/public/RolleAll.ts(7,3): error TS6133: 'MessageComponentInteraction' is declared but its value is never read.
+src/discord/commands/public/RolleAll.ts(80,19): error TS6133: 'roleId' is declared but its value is never read.
+src/discord/commands/public/RolleAll.ts(122,31): error TS2339: Property 'send' does not exist on type 'DMChannel | PartialDMChannel | PartialGroupDMChannel | NewsChannel | StageChannel | TextChannel | PublicThreadChannel<...> | PrivateThreadChannel | VoiceChannel'.
+  Property 'send' does not exist on type 'PartialGroupDMChannel'.
+src/discord/commands/public/RolleAll.ts(131,39): error TS2339: Property 'Video' does not exist on type '{ readonly CreateInstantInvite: bigint; readonly KickMembers: bigint; readonly BanMembers: bigint; readonly Administrator: bigint; readonly ManageChannels: bigint; readonly ManageGuild: bigint; ... 44 more ...; readonly PinMessages: bigint; }'.
+src/discord/commands/public/RolleAll.ts(135,31): error TS2339: Property 'send' does not exist on type 'DMChannel | PartialDMChannel | PartialGroupDMChannel | NewsChannel | StageChannel | TextChannel | PublicThreadChannel<...> | PrivateThreadChannel | VoiceChannel'.
+  Property 'send' does not exist on type 'PartialGroupDMChannel'.
+src/discord/commands/public/RolleAll.ts(189,24): error TS2339: Property 'send' does not exist on type 'GuildBasedChannel'.
+  Property 'send' does not exist on type 'CategoryChannel'.
+src/discord/commands/public/RolleAll.ts(201,24): error TS7006: Parameter 'activities' implicitly has an 'any' type.
+src/discord/commands/public/RolleAll.ts(203,28): error TS7006: Parameter 'activity' implicitly has an 'any' type.
+src/discord/commands/public/RolleAll.ts(219,49): error TS2339: Property 'presence' does not exist on type 'GuildMember | APIInteractionGuildMember'.
+  Property 'presence' does not exist on type 'APIInteractionGuildMember'.
+src/discord/commands/public/RolleAll.ts(234,26): error TS2339: Property 'add' does not exist on type 'string[] | GuildMemberRoleManager'.
+  Property 'add' does not exist on type 'string[]'.
+src/discord/commands/public/RolleAll.ts(243,38): error TS6133: 'oldPresence' is declared but its value is never read.
+src/discord/commands/public/RolleAll.ts(266,28): error TS2339: Property 'send' does not exist on type 'GuildBasedChannel'.
+  Property 'send' does not exist on type 'CategoryChannel'.
+src/discord/commands/public/automodCommand.ts(1,25): error TS6133: 'ResponderType' is declared but its value is never read.
+src/discord/commands/public/automodEvents.ts(1,31): error TS6133: 'Presence' is declared but its value is never read.
+src/discord/commands/public/automodEvents.ts(1,41): error TS6133: 'ActivityType' is declared but its value is never read.
+src/discord/commands/public/automodEvents.ts(1,55): error TS6133: 'GuildMember' is declared but its value is never read.
+src/discord/commands/public/automodEvents.ts(73,35): error TS2339: Property 'send' does not exist on type 'DMChannel | PartialDMChannel | PartialGroupDMChannel | NewsChannel | StageChannel | TextChannel | PublicThreadChannel<...> | PrivateThreadChannel | VoiceChannel'.
+  Property 'send' does not exist on type 'PartialGroupDMChannel'.
+src/discord/commands/public/copy-command.ts(4,10): error TS6133: 'Client' is declared but its value is never read.
+src/discord/commands/public/copy-command.ts(14,23): error TS7030: Not all code paths return a value.
+src/discord/commands/public/copy-command.ts(32,58): error TS2339: Property 'position' does not exist on type 'GuildBasedChannel'.
+  Property 'position' does not exist on type 'PublicThreadChannel<boolean>'.
+src/discord/commands/public/copy-command.ts(32,71): error TS2339: Property 'position' does not exist on type 'GuildBasedChannel'.
+  Property 'position' does not exist on type 'PublicThreadChannel<boolean>'.
+src/discord/commands/public/copy-command.ts(34,15): error TS6133: 'id' is declared but its value is never read.
+src/discord/commands/public/copy-command.ts(56,15): error TS6133: 'id' is declared but its value is never read.
+src/discord/commands/public/copy-command.ts(63,27): error TS2339: Property 'position' does not exist on type 'NewsChannel | StageChannel | TextChannel | PublicThreadChannel<boolean> | PrivateThreadChannel | VoiceChannel | ForumChannel | MediaChannel'.
+  Property 'position' does not exist on type 'PublicThreadChannel<boolean>'.
+src/discord/commands/public/info2.ts(3,37): error TS6133: 'Interaction' is declared but its value is never read.
+src/discord/commands/public/info2.ts(3,50): error TS6133: 'CommandInteraction' is declared but its value is never read.
+src/discord/commands/public/info2.ts(8,8): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './RolleAll.js'?
+src/discord/commands/public/info2.ts(9,38): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './VoiceHandler.js'?
+src/discord/commands/public/info2.ts(10,30): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './automodEvents.js'?
+src/discord/commands/public/info2.ts(11,32): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './urlEvents.js'?
+src/discord/commands/public/info2.ts(12,36): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './status.js'?
+src/discord/commands/public/info2.ts(13,35): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './verification.js'?
+src/discord/commands/public/info2.ts(16,58): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './copy-command.js'?
+src/discord/commands/public/info2.ts(17,60): error TS2835: Relative import paths need explicit file extensions in ECMAScript imports when '--moduleResolution' is 'node16' or 'nodenext'. Did you mean './paste-command.js'?
+src/discord/commands/public/info2.ts(39,50): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/discord/commands/public/info2.ts(44,52): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/discord/commands/public/paste-command.ts(4,10): error TS6133: 'Client' is declared but its value is never read.
+src/discord/commands/public/paste-command.ts(4,51): error TS6133: 'GuildChannel' is declared but its value is never read.
+src/discord/commands/public/paste-command.ts(4,86): error TS6133: 'TextChannel' is declared but its value is never read.
+src/discord/commands/public/paste-command.ts(4,99): error TS6133: 'VoiceChannel' is declared but its value is never read.
+src/discord/commands/public/paste-command.ts(14,23): error TS7030: Not all code paths return a value.
+src/discord/commands/public/register-commands.ts(17,50): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/discord/commands/public/register-commands.ts(23,52): error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string'.
+  Type 'undefined' is not assignable to type 'string'.
+src/discord/commands/public/rules.ts(8,11): error TS7030: Not all code paths return a value.
+src/discord/commands/public/rules.ts(55,32): error TS2339: Property 'send' does not exist on type 'GuildBasedChannel'.
+  Property 'send' does not exist on type 'CategoryChannel'.
+src/discord/commands/public/verification.ts(5,3): error TS6133: 'ApplicationCommandType' is declared but its value is never read.
+src/discord/commands/public/verification.ts(20,7): error TS6133: 'guildId' is declared but its value is never read.
+src/discord/commands/public/verification.ts(25,34): error TS7030: Not all code paths return a value.
+src/discord/commands/public/verification.ts(86,25): error TS2339: Property 'permissionOverwrites' does not exist on type 'CategoryChannel | NewsChannel | StageChannel | TextChannel | PublicThreadChannel<boolean> | PrivateThreadChannel | VoiceChannel'.
+  Property 'permissionOverwrites' does not exist on type 'PublicThreadChannel<boolean>'.
+src/discord/commands/public/verification.ts(89,25): error TS2339: Property 'permissionOverwrites' does not exist on type 'CategoryChannel | NewsChannel | StageChannel | TextChannel | PublicThreadChannel<boolean> | PrivateThreadChannel | VoiceChannel'.
+  Property 'permissionOverwrites' does not exist on type 'PublicThreadChannel<boolean>'.
+src/discord/commands/public/verification.ts(126,9): error TS2353: Object literal may only specify known properties, and 'ephemeral' does not exist in type 'MessagePayload | InteractionEditReplyOptions'.
+src/discord/commands/public/verification.ts(132,34): error TS7030: Not all code paths return a value.

@@ -7,8 +7,30 @@ requiredFiles = [".replit", "replit.nix", "package.json", "package-lock.json"]
 
 [nix]
 channel = "stable-24_11"
+packages = ["flyctl"]
 
 [deployment]
 run = ["node", "index.js"]
 deploymentTarget = "autoscale"
 ignorePorts = false
+
+[workflows]
+
+[[workflows.workflow]]
+name = "run"
+mode = "sequential"
+author = 46799040
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+
+[[ports]]
+localPort = 3000
+
+[[ports]]
+localPort = 3001
+externalPort = 80
+
+[agent]
+expertMode = true

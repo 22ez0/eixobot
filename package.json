@@ -40,5 +40,8 @@
     "#tools": ["./build/tools/index.js"],
     "#lib/*": ["./build/lib/*"]
   },
-  "baseVersion": "1.4.4"
+  "baseVersion": "1.4.4",
+  "engines": {
+    "node": "^20.0.0"
+  }
 }

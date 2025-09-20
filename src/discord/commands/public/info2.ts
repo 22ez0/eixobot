@@ -12,10 +12,7 @@ import { setupUrlEvents } from "./urlEvents.js";
 import { setupDynamicStatus } from "./status.js"; 
 import { setupVerification } from "./verification.js"; 
 
-// --- Importe os novos comandos ---
-import { data as copyData, execute as copyExecute } from './copy-command.js';
-import { data as pasteData, execute as pasteExecute } from './paste-command.js';
-// --- Fim da Importação ---
+// Command imports handled by base framework
 
 // Command registration is handled by the base framework
 // Removed duplicate registration to prevent API rate limiting
@@ -48,15 +45,6 @@ client.once("ready", () => {
   setupVerification(client);
 });
 
-// Adicione o listener para os novos comandos
-client.on('interactionCreate', async interaction => {
-  if (!interaction.isCommand()) return;
-
-  if (interaction.commandName === 'copy') {
-    await copyExecute(interaction);
-  } else if (interaction.commandName === 'paste') {
-    await pasteExecute(interaction);
-  }
-});
+// Command interactions handled by base framework
 
 client.login(process.env.BOT_TOKEN);

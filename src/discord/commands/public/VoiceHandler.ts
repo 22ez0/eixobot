@@ -24,41 +24,62 @@ export const handleVoiceAndStatus = (client: Client) => {
   // URL da Twitch para o status de 'Streaming'
   const twitchUrl = 'https://www.twitch.tv/alanzoka';
 
-  // --- Mudar o status inicialmente ---
-  client.user?.setPresence({
-    activities: [{
-      name: streamingStatusList[currentIndex],
-      type: ActivityType.Streaming,
-      url: twitchUrl,
-    }],
-    status: 'online',
-  });
-  currentIndex = (currentIndex + 1) % streamingStatusList.length;
-
-  // --- Encontrar e entrar no canal de voz ---
-  const guild = client.guilds.cache.get(guildId);
-  if (guild) {
-    const channel = guild.channels.cache.get(voiceChannelId);
-    if (channel?.isVoiceBased()) {
-      joinVoiceChannel({
-        channelId: channel.id,
-        guildId: guild.id,
-        adapterCreator: guild.voiceAdapterCreator,
+  // Aguardar um pouco antes de definir presence (evitar erro de shard)
+  setTimeout(() => {
+    try {
+      // --- Mudar o status inicialmente ---
+      client.user?.setPresence({
+        activities: [{
+          name: streamingStatusList[currentIndex],
+          type: ActivityType.Streaming,
+          url: twitchUrl,
+        }],
+        status: 'online',
       });
-      console.log(` Bot entrou no canal de voz: ${channel.name}`);
-    } else {
-      console.log(' Canal de voz não encontrado no servidor especificado.');
+      currentIndex = (currentIndex + 1) % streamingStatusList.length;
+    } catch (error) {
+      console.log('⚠️ Erro ao definir presence:', error instanceof Error ? error.message : String(error));
     }
-  } else {
-    console.log(' Servidor não encontrado.');
-  }
+  }, 3000); // 3 segundos de delay
 
-  // --- Loop para mudar o status a cada 10 segundos ---
-  setInterval(() => {
-    client.user?.setActivity(streamingStatusList[currentIndex], { 
-      type: ActivityType.Streaming,
-      url: twitchUrl,
-    });
-    currentIndex = (currentIndex + 1) % streamingStatusList.length;
-  }, 10000); // 10000 milissegundos = 10 segundos
+  // --- Encontrar e entrar no canal de voz (com delay) ---
+  setTimeout(() => {
+    try {
+      const guild = client.guilds.cache.get(guildId);
+      if (guild) {
+        const channel = guild.channels.cache.get(voiceChannelId);
+        if (channel?.isVoiceBased()) {
+          joinVoiceChannel({
+            channelId: channel.id,
+            guildId: guild.id,
+            adapterCreator: guild.voiceAdapterCreator,
+          });
+          console.log(` Bot entrou no canal de voz: ${channel.name}`);
+        } else {
+          console.log(' Canal de voz não encontrado no servidor especificado.');
+        }
+      } else {
+        console.log(' Servidor não encontrado.');
+      }
+    } catch (error) {
+      console.log('⚠️ Erro ao conectar no canal de voz:', error instanceof Error ? error.message : String(error));
+    }
+  }, 5000); // 5 segundos de delay
+
+  // --- Loop para mudar o status a cada 10 segundos (com verificação) ---
+  setTimeout(() => {
+    setInterval(() => {
+      try {
+        if (client.user && client.isReady()) {
+          client.user.setActivity(streamingStatusList[currentIndex], { 
+            type: ActivityType.Streaming,
+            url: twitchUrl,
+          });
+          currentIndex = (currentIndex + 1) % streamingStatusList.length;
+        }
+      } catch (error) {
+        console.log('⚠️ Erro ao atualizar status:', error instanceof Error ? error.message : String(error));
+      }
+    }, 10000); // 10000 milissegundos = 10 segundos
+  }, 8000); // Começar após 8 segundos
 };

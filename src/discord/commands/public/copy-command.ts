@@ -1,7 +1,7 @@
 // copy-command.ts
 
 import { SlashCommandBuilder } from '@discordjs/builders';
-import { Client, CommandInteraction, ChannelType, PermissionsBitField, GuildChannel, CategoryChannel } from 'discord.js';
+import { CommandInteraction, ChannelType, PermissionsBitField, GuildChannel, CategoryChannel } from 'discord.js';
 import * as fs from 'fs';
 
 const COMMAND_NAME = 'copy';

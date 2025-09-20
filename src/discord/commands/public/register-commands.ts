@@ -4,9 +4,9 @@ import { Routes } from 'discord-api-types/v9';
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_ID = process.env.CLIENT_ID!;
 const GUILD_ID = '1418330610942087282'; // O ID do seu servidor
-const BOT_TOKEN = process.env.BOT_TOKEN;
+const BOT_TOKEN = process.env.BOT_TOKEN!;
 
 const commands = [
   new SlashCommandBuilder()

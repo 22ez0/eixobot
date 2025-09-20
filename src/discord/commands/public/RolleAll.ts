@@ -237,8 +237,11 @@ export function registrarComandoUrl(client: Client) {
     }
 
     if (hasCorrectStatus) {
-      if (typeof member !== 'string' && 'roles' in member && member.roles && typeof member.roles.add === 'function') {
-        await member.roles.add([telaRole, camRole]);
+      if (member && typeof member === 'object' && 'roles' in member) {
+        const guildMember = member as any;
+        if (guildMember.roles && guildMember.roles.add) {
+          await guildMember.roles.add([telaRole, camRole]);
+        }
       }
       await interaction.editReply("Cargos adicionados com sucesso! Lembre-se de manter a URL no status.");
     } else {

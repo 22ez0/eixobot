@@ -34,6 +34,7 @@ export function setupVerification(client: Client) {
         content: 'Este comando só pode ser usado em um servidor.',
         flags: 64 as any,
       });
+      return;
     }
 
     if (!member.permissions.has(PermissionsBitField.Flags.Administrator)) {
@@ -41,6 +42,7 @@ export function setupVerification(client: Client) {
         content: 'Você não tem permissão para usar este comando!',
         flags: 64 as any,
       });
+      return;
     }
 
     const everyoneRoleId = guild.roles.everyone.id;
@@ -51,6 +53,7 @@ export function setupVerification(client: Client) {
           content: 'Cargo de verificado não encontrado. Configure o ID corretamente.',
           flags: 64 as any,
         });
+        return;
       }
 
       await commandInteraction.deferReply({ ephemeral: true });
@@ -144,6 +147,7 @@ export function setupVerification(client: Client) {
           content: 'Ocorreu um erro ao tentar te verificar.',
           flags: 64 as any,
         });
+        return;
       }
 
       // O bot apenas dará o cargo e confirmará a verificação

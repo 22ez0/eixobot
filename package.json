@@ -7,7 +7,9 @@
     "start": "node build/index.js",
     "dev": "tsx src/index.ts",
     "watch": "tsx watch src/index.ts",
-    "check": "tsc --noEmit && echo ✔ Ok"
+    "check": "tsc --noEmit && echo ✔ Ok",
+    "render-build": "npm install && npm run build",
+    "render-start": "npm start"
   },
   "dependencies": {
     "@discordjs/voice": "^0.19.0",

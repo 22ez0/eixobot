@@ -1,7 +1,7 @@
 // paste-command.ts
 
 import { SlashCommandBuilder } from '@discordjs/builders';
-import { Client, CommandInteraction, ChannelType, GuildChannel, PermissionsBitField, TextChannel, VoiceChannel } from 'discord.js';
+import { CommandInteraction, ChannelType, PermissionsBitField } from 'discord.js';
 import * as fs from 'fs';
 
 const COMMAND_NAME = 'paste';
@@ -11,7 +11,7 @@ export const data = new SlashCommandBuilder()
   .setDescription('Cola a estrutura do servidor a partir de um JSON.')
   .toJSON();
 
-export async function execute(interaction: CommandInteraction) {
+export async function execute(interaction: CommandInteraction): Promise<any> {
   if (!interaction.guild || !interaction.memberPermissions?.has(PermissionsBitField.Flags.Administrator)) {
     return interaction.reply({ content: 'Você não tem permissão para usar este comando.', ephemeral: true });
   }

@@ -7,15 +7,17 @@ createCommand({
     type: ApplicationCommandType.ChatInput,
     async run(interaction): Promise<void> {
         if (!interaction.member.permissions.has("ManageGuild")) {
-            return interaction.reply({
+            await interaction.reply({
                 content: "Você não tem permissão para usar este comando!",
                 flags: 64,
             });
+            return;
         }
 
         const guild = interaction.guild;
         if (!guild) {
-            return interaction.reply({ content: "Este comando só pode ser usado em um servidor.", flags: 64 });
+            await interaction.reply({ content: "Este comando só pode ser usado em um servidor.", flags: 64 });
+            return;
         }
 
         try {

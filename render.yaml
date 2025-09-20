@@ -1,5 +1,5 @@
 services:
-  - type: background
+  - type: worker
     name: discord-bot
     env: node
     region: oregon

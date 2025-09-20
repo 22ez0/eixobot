@@ -15,6 +15,7 @@ deploymentTarget = "autoscale"
 ignorePorts = false
 
 [workflows]
+runButton = "Project"
 
 [[workflows.workflow]]
 name = "run"
@@ -24,6 +25,26 @@ author = 46799040
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npm run dev"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Discord Bot"
+
+[[workflows.workflow]]
+name = "Discord Bot"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+
+[workflows.workflow.metadata]
+outputType = "console"
 
 [[ports]]
 localPort = 3000

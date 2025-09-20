@@ -1,6 +1,6 @@
 {
   "name": "workspace",
-  "type": "module",
+  "type": "module", 
   "main": "build/index.js",
   "scripts": {
     "build": "tsc",
@@ -27,35 +27,20 @@
     "zod": "4.0.17"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
     "@types/node": "22.16.4",
     "tsx": "^4.19.3",
     "typescript": "^5.7.2"
   },
   "imports": {
-    "#env": [
-      "./build/env.js"
-    ],
-    "#base": [
-      "./build/discord/base/index.js"
-    ],
-    "#functions": [
-      "./build/functions/index.js"
-    ],
-    "#database": [
-      "./build/database/index.js"
-    ],
-    "#server": [
-      "./build/server/index.js"
-    ],
-    "#menus": [
-      "./build/menus/index.js"
-    ],
-    "#tools": [
-      "./build/tools/index.js"
-    ],
-    "#lib/*": [
-      "./build/lib/*"
-    ]
+    "#env": ["./build/env.js"],
+    "#base": ["./build/discord/base/index.js"],
+    "#functions": ["./build/functions/index.js"],
+    "#database": ["./build/database/index.js"],
+    "#server": ["./build/server/index.js"],
+    "#menus": ["./build/menus/index.js"],
+    "#tools": ["./build/tools/index.js"],
+    "#lib/*": ["./build/lib/*"]
   },
   "baseVersion": "1.4.4",
   "engines": {

@@ -15,6 +15,7 @@
     "@discordjs/voice": "^0.19.0",
     "@magicyan/discord": "1.5.2",
     "@reliverse/reglob": "1.0.0",
+    "@snazzah/davey": "^0.1.6",
     "axios": "^1.12.2",
     "body-parser": "^2.2.0",
     "chalk": "5.5.0",

@@ -3,7 +3,7 @@ services:
     name: discord-bot
     env: node
     region: oregon
-    buildCommand: npm install && npm run build
+    buildCommand: npm ci && npm run build
     startCommand: node ./build/index.js
     envVars:
       - key: BOT_TOKEN
